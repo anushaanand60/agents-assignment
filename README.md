@@ -373,7 +373,6 @@ The Agents framework is under active development in a rapidly evolving field. We
 </tbody>
 </table>
 <!--END_REPO_NAV-->
----
 
 ## Assignment: Intelligent Interruption Handling
 
