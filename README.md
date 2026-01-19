@@ -373,3 +373,26 @@ The Agents framework is under active development in a rapidly evolving field. We
 </tbody>
 </table>
 <!--END_REPO_NAV-->
+---
+
+## Assignment: Intelligent Interruption Handling
+
+This fork adds state-aware interruption logic for a LiveKit voice agent as part of a technical assignment.
+
+### Approach
+-Track whether the agent is currently speaking using the `agent_state_changed` hook.
+-Inspect only final user transcripts via `user_input_transcribed`.
+-Ignore passive acknowledgements such as "yeah", "ok", or "hmm" while the agent is speaking.
+-Immediately interrupt the agent on active commands like "stop", "wait", or "no".
+-Handle mixed inputs (e.g. "yeah wait") by prioritizing the interrupt keyword.
+-Do not modify VAD or internal audio streaming behavior.
+
+### Strict requirement: no pause or stutter
+When the agent is speaking and the user says only filler words, the implementation does **not**
+issue any pause, resume, or interrupt calls. Because the audio stream is never touched in this
+case, the agent continues speaking seamlessly without stutter or partial interruption.
+
+### Proof
+The decision paths are instrumented with logs at key points (agent speaking state, filler
+input ignored, interruption triggered). These logs demonstrate the required behavior and
+serve as a proof of correctness.
