@@ -395,3 +395,9 @@ case, the agent continues speaking seamlessly without stutter or partial interru
 The decision paths are instrumented with logs at key points (agent speaking state, filler
 input ignored, interruption triggered). These logs demonstrate the required behavior and
 serve as a proof of correctness.
+
+### Sample log output
+- INFO Agent has started speaking
+- INFO User said a filler word, continuing speech
+- INFO User interruption detected, stopping speech
+- INFO Agent has stopped speaking
