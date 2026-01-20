@@ -52,6 +52,13 @@ When the agent is not speaking, the interruption filter does not apply. In this
 state, short acknowledgements like “yeah” are treated as valid input and handled
 normally by the agent.
 
+## Configurability and code structure
+The ignore list and interrupt keywords are defined as simple sets in one place,
+making them easy to adjust or extend without changing the control flow.
+
+This keeps the logic modular and makes it straightforward to add new filler words
+or commands if needed.
+
 
 ## No VAD modification
 This solution does not modify LiveKit’s VAD or any low-level audio processing.
