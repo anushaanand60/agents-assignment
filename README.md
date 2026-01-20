@@ -392,6 +392,7 @@ issue any pause, resume, or interrupt calls. Because the audio stream is never t
 case, the agent continues speaking seamlessly without stutter or partial interruption.
 
 ### Proof
+[View proof video](https://drive.google.com/file/d/18m9-Ah31Ahb8IuabSOsOcktm-xLhXW1t/view?usp=sharing)
 The decision paths are instrumented with logs at key points (agent speaking state, filler
 input ignored, interruption triggered). These logs demonstrate the required behavior and
 serve as a proof of correctness.
